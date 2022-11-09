@@ -1,0 +1,11 @@
+---
+- name: laravel-deployment
+  hosts: slaveub
+  remote_user: ubuntu
+  become: true
+ 
+  tasks:   
+  - name: Update Apt Repository
+    apt: update_cache=yes cache_valid_time=3600
+  - name: Upgrade The Apt Repository'
+    apt: upgrade=yes cache_valid_time=3600
